@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    background-color: #0B132B;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+header .logo img{
+    height: 50px;
+}
+
+.hamburger-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 6px;
+  position: relative;
+}
+
+/* Estilo general para las 3 barras */
+.hamburger-btn .line {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+/* ==========================================
+   TRANSFORMACIÓN A CRUZ (Clase .open)
+   ========================================== */
+
+/* 1. Ocultar la línea del medio suavemente */
+.hamburger-btn.open .line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+/* 2. Rotar la línea superior 45 grados */
+.hamburger-btn.open .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background-color: white;
+}
+
+/* 3. Rotar la línea inferior -45 grados */
+.hamburger-btn.open .line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background-color: white;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: linear-gradient(135deg, #00519df8 50%, #0B132B 100%);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 100px;
+    transition: right 0.3s ease-in-out;
+}
+
+.nav-menu li:first-child {
+    border-top: none;
+}
+
+.nav-menu li:last-child {
+    border-bottom: 1px solid #00A3E0;
+}
+
+.nav-menu li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #00A3E0;
+    padding: 15px 40px;
+    height: 70px;
+    width: 100%;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-menu.open {
+    right: 0;
+    transition: right 0.3s ease-in-out;
+}
+
+.hero {
+    color: #fff;
+    background-color: #0B132B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 25vh;
+    background-image: url("/hero.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hero span {
+    color: #079FF0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+    margin-left: 30px;
+}
+
+.hero a {
+    font-size: 15px;
+    text-decoration: none;
+    width: 250px;
+}
+
+.hero a i, .hero a span {
+    height: 100%;
+    color: white;
+}
+
+.hero a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #079FF0;
+    border: none;
+    padding: 10px 15px;
+}
