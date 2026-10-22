@@ -121,9 +121,10 @@ header .logo img{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 25vh;
+    height: 60vh;
     background-image: url("/hero.png");
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -135,7 +136,7 @@ header .logo img{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 90%;
+    height: 50%;
     margin-left: 30px;
 }
 
