@@ -143,7 +143,7 @@ header .logo img{
 .hero a {
     font-size: 15px;
     text-decoration: none;
-    width: 250px;
+    width: 300px;
 }
 
 .hero a i, .hero a span {
@@ -158,4 +158,8 @@ header .logo img{
     background-color: #079FF0;
     border: none;
     padding: 10px 15px;
+}
+
+.hero h2 {
+    font-size: 40px;
 }
