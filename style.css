@@ -206,16 +206,18 @@ header .logo img{
 }
 
 .cardP p {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /*------------------------------------------------*/
 
 .about {
     background-color: #050d25;
+    height: 40vh;
 }
 
 .about-content {
+    height: 100%;
     padding: 10px;
     color: #079FF0;
     display: flex;
@@ -228,7 +230,7 @@ header .logo img{
 
 .aboutImg img {
     width: 150px;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 15px;
 }
@@ -243,12 +245,13 @@ header .logo img{
 }
 
 .aboutInfo h4 {
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .aboutInfo p {
-    font-size: 12px;
+    font-size: 15px;
     padding: 10px 0;
+    color: #fff;
 }
 
 .aboutList {
@@ -260,5 +263,12 @@ header .logo img{
 .aboutList span {
     display: flex;
     align-items: center;
-    font-size: 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/*------------------------------*/
+
+.contactUs {
+    background-image: url(/contactIcon.png);
 }
