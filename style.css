@@ -6,6 +6,7 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: #0B132B;
 }
 
 header {
@@ -162,4 +163,38 @@ header .logo img{
 
 .hero h2 {
     font-size: 40px;
+}
+
+/* -------------------------------- */
+
+.services-container {
+    padding: 20px 30px;
+}
+
+.services-container h4{
+    color: #00A3E0;
+}
+
+.cards {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    padding: 5px;
+}
+
+.cardLogo img {
+    width: 40px;
+}
+
+.cardTitle h3, .cardP p {
+    color: #fff;
+}
+
+.cardTitle h3 {
+    font-size: 15px;
 }
