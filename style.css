@@ -269,6 +269,92 @@ header .logo img{
 
 /*------------------------------*/
 
+.contactUs-bk {
+    
+    background-image: url("./formImage.jpg");
+    background-position: right;
+}
+
 .contactUs {
-    background-image: url(/contactIcon.png);
+    object-fit: cover;
+    backdrop-filter: blur(5px);
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contactUs-text {
+    padding: 20px;
+}
+
+.contactUs-text h4 {
+    color: #00A3E0;
+    margin-bottom: 10px;
+}
+
+.contactUs-text p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contactUs form {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #00a4e042;
+    background-color: #00a4e02c;
+}
+
+.contactUs form div {
+    margin: 5px 0;
+}
+
+.top {
+    display: flex;
+    gap: 5px;
+}
+
+.top input {
+    padding: 7px;
+    width: 50%;
+    background-color: transparent;
+    border: 2px solid #00a4e042;
+}
+
+.middle input {
+    padding: 7px;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #00a4e042;
+}
+
+input {
+    outline: none;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    border: 2px solid cyan;
+    box-shadow: 0 0 2px cyan;
+    transition: all .7s;
+}
+
+.bottom a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #079FF0;
+    border: none;
+    padding: 7px;
+    color: white;
+}
+
+.bottom i {
+    margin-left: 10px;
 }
