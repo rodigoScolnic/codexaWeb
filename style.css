@@ -369,7 +369,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 footer .flogo img{
