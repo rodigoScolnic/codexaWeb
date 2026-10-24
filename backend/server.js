@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.post("https://codexa-q8oa.onrender.com/api/contacto", contactLimiter, (req, res) => {
+app.post("/api/contacto", contactLimiter, (req, res) => {
     const { nombre, email, mensaje } = req.body;
     console.log("Datos recibidos:", req.body);
     if (
