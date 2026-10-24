@@ -129,7 +129,7 @@ body.menu-open {
     flex-direction: column;
     justify-content: center;
     height: 60vh;
-    background-image: url("/hero.png");
+    background-image: url("/assets/images/hero.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -278,7 +278,7 @@ body.menu-open {
 
 .contactUs-bk {
     
-    background-image: url("./formImage.jpg");
+    background-image: url("/assets/images/formImage.jpg");
     background-position: right;
 }
 

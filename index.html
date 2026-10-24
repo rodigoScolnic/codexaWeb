@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="/codexa_logo.png" alt="">
+            <img src="./assets/images/codexa_logo.png" alt="">
         </div>
         <div class="h-manu">
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
@@ -51,7 +51,7 @@
                 <div class="cards">
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/devIcon.png" alt="">
+                            <img src="./assets/images/devIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Desarrollo web</h3>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/gearIcon.png" alt="">
+                            <img src="./assets/images/gearIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Automatización</h3>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/stackIcon.png" alt="">
+                            <img src="./assets/images/stackIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Gestion de stock y clientes</h3>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/shieldIcon.png" alt="">
+                            <img src="./assets/images/shieldIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Domotica y seguridad</h3>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/marketingIcon.png" alt="">
+                            <img src="./assets/images/marketingIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Marketing digital</h3>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="card">
                         <div class="cardLogo">
-                            <img src="/userQIcon.png" alt="">
+                            <img src="./assets/images/userQIcon.png" alt="">
                         </div>
                         <div class="cardTitle">
                             <h3>Consultoria tecnologica</h3>
@@ -122,7 +122,7 @@
         <section class="about">
             <div class="about-content">
                 <div class="aboutImg">
-                    <img src="/aboutImg.jpg" alt="">
+                    <img src="./assets/images/aboutImg.jpg" alt="">
                 </div>
                 <div class="aboutInfo">
                     <h4>Tecnologia al servicio de tus ideas</h4>
@@ -144,33 +144,34 @@
                     <h4>Contame de tu proyecto</h4>
                     <p>Completa el formulario y te responderemos a la brevedad.</p>
                 </div>
-                <form action="https://formsubmit.co/codexa.techco@gmail.com" method="POST">
+                <form id="contactForm">
                     <div class="top">
-                        <input type="text" name="name" placeholder="Nombre">
+                        <input type="text" name="nombre" placeholder="Nombre">
                         <input type="email" name="email" placeholder="E-mail">
                     </div>
                     <div class="middle">
-                        <input type="text" name="massage" placeholder="Mensaje">
+                        <input type="text" name="mensaje" placeholder="Mensaje">
                     </div>
                     <div class="bottom">
                         <button type="submit"><span>Enviar</span><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
+                    <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </section>
         </div>
 
         <footer>
             <div class="flogo">
-                <img src="/codexa_logo.png" alt="">
+                <img src="./assets/images/codexa_logo.png" alt="">
             </div>
             <div class="socialMedia">
-                <img src="/faceIcon.png" alt="">
-                <img src="/instaIcon.png" alt="">
-                <img src="/wspIcon.png" alt="">
+                <img src="./assets/images/faceIcon.png" alt="">
+                <img src="./assets/images/instaIcon.png" alt="">
+                <img src="./assets/images/wspIcon.png" alt="">
             </div>
         </footer>
     </main>
 
-    <script src="/scrpit.js"></script>
+    <script src="/js/scrpit.js"></script>
 </body>
 </html>
