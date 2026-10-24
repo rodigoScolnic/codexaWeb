@@ -387,6 +387,29 @@ footer .socialMedia img {
     width: 50px;
 }
 
+.form-status {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    color: #b9f5d0;
+    background: rgba(34, 197, 94, 0.10);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.form-status.error {
+    display: block;
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.10);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
 /*-----*/
 
 @media (max-width: 359px) {

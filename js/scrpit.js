@@ -52,13 +52,18 @@ if (contactForm && formStatus) {
                 );
             }
 
-            formStatus.textContent = resultado.mensaje;
+            formStatus.textContent =
+    "¡Gracias por contactarnos! Recibimos tu consulta correctamente. Nos pondremos en contacto con vos a la brevedad.";
+
+formStatus.className = "form-status success";
             contactForm.reset();
         } catch (error) {
             console.error("Error al enviar el formulario:", error);
 
             formStatus.textContent =
-                "No pudimos enviar tu consulta. Intentá nuevamente.";
+    "No pudimos enviar tu consulta. Por favor, intentá nuevamente en unos minutos.";
+
+formStatus.className = "form-status error";
         } finally {
             submitButton.disabled = false;
         }
