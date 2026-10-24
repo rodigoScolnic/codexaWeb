@@ -397,6 +397,7 @@ footer .socialMedia img {
 }
 
 .form-status.success {
+    position: relative;
     display: block;
     color: #b9f5d0;
     background: rgba(34, 197, 94, 0.10);
@@ -404,6 +405,7 @@ footer .socialMedia img {
 }
 
 .form-status.error {
+    position: relative;
     display: block;
     color: #fecaca;
     background: rgba(239, 68, 68, 0.10);
