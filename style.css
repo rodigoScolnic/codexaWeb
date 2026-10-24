@@ -300,6 +300,10 @@ header .logo img{
 }
 
 .contactUs form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
     margin: 5px;
     padding: 5px;
     border: 2px solid #00a4e042;
@@ -357,4 +361,21 @@ input:focus {
 
 .bottom i {
     margin-left: 10px;
+}
+
+/*-----------------------*/
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+footer .flogo img{
+    width: 150px;
+}
+
+footer .socialMedia img {
+    width: 50px;
 }
