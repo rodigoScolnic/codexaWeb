@@ -34,7 +34,7 @@ if (contactForm && formStatus) {
 
         try {
             const respuesta = await fetch(
-                "http://localhost:3001/api/contacto",
+                "https://codexa-q8oa.onrender.com/api/contacto",
                 {
                     method: "POST",
                     headers: {
