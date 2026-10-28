@@ -13,6 +13,8 @@ hamburgerBtn.addEventListener('click', () => {
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
+let timeoutMensaje;
+
 if (contactForm && formStatus) {
     contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -29,12 +31,18 @@ if (contactForm && formStatus) {
             mensaje: formData.get("mensaje")
         };
 
-        submitButton.disabled = true;
+        // Evitar que quede un mensaje anterior
+        clearTimeout(timeoutMensaje);
+
+        formStatus.classList.remove("ocultar");
         formStatus.textContent = "Enviando consulta...";
+        formStatus.className = "form-status";
+
+        submitButton.disabled = true;
 
         try {
             const respuesta = await fetch(
-                "https://codexa-q8oa.onrender.com/api/contacto",
+                "http://localhost:3001/api/contacto",
                 {
                     method: "POST",
                     headers: {
@@ -53,19 +61,33 @@ if (contactForm && formStatus) {
             }
 
             formStatus.textContent =
-    "¡Gracias por contactarnos! Recibimos tu consulta correctamente. Nos pondremos en contacto con vos a la brevedad.";
+                "¡Gracias por contactarnos! Recibimos tu consulta correctamente. Nos pondremos en contacto con vos a la brevedad.";
 
-formStatus.className = "form-status success";
+            formStatus.className = "form-status success";
             contactForm.reset();
+
         } catch (error) {
             console.error("Error al enviar el formulario:", error);
 
             formStatus.textContent =
-    "No pudimos enviar tu consulta. Por favor, intentá nuevamente en unos minutos.";
+                "No pudimos enviar tu consulta. Por favor, intentá nuevamente en unos minutos.";
 
-formStatus.className = "form-status error";
+            formStatus.className = "form-status error";
+
         } finally {
             submitButton.disabled = false;
         }
+
+        // Desaparecer el mensaje después de 4 segundos
+        timeoutMensaje = setTimeout(() => {
+            formStatus.classList.add("ocultar");
+
+            // Limpiar el mensaje cuando termine la animación
+            setTimeout(() => {
+                formStatus.textContent = "";
+                formStatus.className = "form-status";
+            }, 500);
+
+        }, 4000);
     });
 }
