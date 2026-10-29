@@ -226,19 +226,23 @@ body.menu-open {
 /*------------------------------------------------*/
 
 .about {
-    background-color: #050d25;
     height: auto;
     margin: px 0;
+    background-image: url("/assets/images/aboutImg.jpg");
+    background-position: center;
+    height: 60vh;
 }
 
 .about-content {
+    background-color: rgba(0, 255, 255, 0.1);
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     gap: 20px;
     padding: 24px 20px;
-    color: #079FF0;
+    color: #00A3E0;
     display: flex;
     align-items: center;
 }
@@ -291,7 +295,6 @@ body.menu-open {
 /*------------------------------*/
 
 .contactUs-bk {
-    
     background-image: url("/assets/images/formImage.png");
     background-position: left;
 }
@@ -303,7 +306,7 @@ body.menu-open {
     flex-direction: column;
     justify-content: space-around;
     min-height: 0;
-    height: 70vh;
+    height: 60vh;
     padding: 16px 0;
 }
 
@@ -313,6 +316,7 @@ body.menu-open {
 
 .contactUs-text h4 {
     color: #00A3E0;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -328,8 +332,6 @@ body.menu-open {
     justify-content: center;
     align-items: center;
     height: 70%;
-    border: 2px solid #00a4e042;
-    background-color: #00a4e02c;
 }
 
 .contactUs .form-row {
