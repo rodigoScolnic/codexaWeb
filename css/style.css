@@ -227,19 +227,23 @@ body.menu-open {
 
 .about {
     height: auto;
-    margin: px 0;
     background-image: url("/assets/images/aboutImg.jpg");
     background-position: center;
+    background-repeat: no-repeat;
     height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-content {
     background-color: rgba(0, 255, 255, 0.1);
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     padding: 24px 20px;
     color: #00A3E0;
@@ -257,6 +261,14 @@ body.menu-open {
     max-width: 320px;
     height: auto;
     object-fit: cover;
+}
+
+.about .aboutInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    max-width: 480px;
 }
 
 
@@ -304,8 +316,8 @@ body.menu-open {
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    min-height: 0;
+    justify-content: center;
+    align-items: center;
     height: 60vh;
     padding: 16px 0;
 }
@@ -327,6 +339,8 @@ body.menu-open {
 }
 
 .contactUs form {
+    max-width: 480px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -376,17 +390,11 @@ body.menu-open {
     color: white;
 }
 
-
-
-
-
-
-
 /*------------------------*/
 
 footer {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     padding: 40px 20px;
 }
