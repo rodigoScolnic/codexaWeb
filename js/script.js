@@ -42,7 +42,7 @@ if (contactForm && formStatus) {
 
         try {
             const respuesta = await fetch(
-                "https://codexa-q8oa.onrender.com",
+                "https://codexa-web-kj03.onrender.com/",
                 {
                     method: "POST",
                     headers: {
