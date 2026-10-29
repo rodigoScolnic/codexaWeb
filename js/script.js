@@ -1,14 +1,15 @@
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navMenu = document.getElementById('navMenu');
 
-hamburgerBtn.addEventListener('click', () => {
-    const isOpen = hamburgerBtn.classList.toggle('open');
+if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+        const isOpen = hamburgerBtn.classList.toggle('open');
 
-    navMenu.classList.toggle('open', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
-
-    hamburgerBtn.setAttribute('aria-expanded', isOpen);
-});
+        navMenu.classList.toggle('open', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+}
 
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
@@ -53,6 +54,7 @@ if (contactForm && formStatus) {
             );
 
             const resultado = await respuesta.json();
+
 
             if (!respuesta.ok) {
                 throw new Error(
