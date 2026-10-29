@@ -145,21 +145,19 @@
                     <p>Completa el formulario y te responderemos a la brevedad.</p>
                 </div>
                 <form id="contactForm">
-                    <div class="top">
-                        <input type="text" name="nombre" placeholder="Nombre">
-                        <input type="email" name="email" placeholder="E-mail">
+                    <div class="form-row">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        <input type="email" name="email" placeholder="Tu email" required>
                     </div>
-                    <div class="middle">
-                        <input type="text" name="mensaje" placeholder="Mensaje">
-                    </div>
-                    <div class="bottom">
-                        <button type="submit"><span>Enviar</span><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                    
+                    <textarea name="mensaje" placeholder="Escribí tu consulta..." required></textarea>
+                    <button type="submit">Enviar consulta <i class="fa-solid fa-arrow-right"></i></button>
+                    <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
-                <p id="formStatus" role="status" aria-live="polite"></p>
+                
             </section>
         </div>
+
+        
 
         <footer>
             <div class="flogo">
