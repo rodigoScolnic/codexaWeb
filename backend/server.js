@@ -1,72 +1,59 @@
+
 require("dotenv").config();
 
 const express = require("express");
-const helmet = require("helmet");
 const cors = require("cors");
+const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    connectionTimeout: 30000,
-    greetingTimeout: 30000,
-    socketTimeout: 30000,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
-
-transporter.verify()
-    .then(() => {
-        console.log("✅ Nodemailer está listo para enviar correos");
-    })
-    .catch((error) => {
-        console.error("❌ Error al conectar con Gmail:", error.message);
-    });
+const { Resend } = require("resend");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const frontendURL =
-    process.env.FRONTEND_URL || "http://localhost:5500";
+// Configuración de Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Seguridad y configuración
 app.use(helmet());
+app.use(express.json({ limit: "10kb" }));
 
-app.use(cors({
-    origin: frontendURL,
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"]
-}));
+const frontendURL = process.env.FRONTEND_URL;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(
+    cors({
+        origin: frontendURL,
+        methods: ["GET", "POST", "OPTIONS"],
+        allowedHeaders: ["Content-Type"]
+    })
+);
 
-const contactLimiter = rateLimit({
+// Límite de solicitudes al formulario
+const contactoLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    limit: 100,
-    standardHeaders: "draft-8",
-    legacyHeaders: false
+    max: 5,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: {
+        error: "Demasiados intentos. Esperá unos minutos y volvé a intentarlo."
+    }
 });
 
+// Ruta principal para comprobar que el backend funciona
 app.get("/", (req, res) => {
-    res.json({
-        mensaje: "Backend de CODEXA funcionando 🚀"
+    res.status(200).json({
+        mensaje: "Backend de Codexa funcionando correctamente."
     });
 });
 
-app.post("/api/contacto", contactLimiter, async (req, res) => {
-    const { nombre, email, mensaje } = req.body;
+// Formulario de contacto
+app.post("/api/contacto", contactoLimiter, async (req, res) => {
+    const { nombre, email, mensaje } = req.body || {};
 
+    // Validaciones
     if (
         typeof nombre !== "string" ||
         typeof email !== "string" ||
-        typeof mensaje !== "string" ||
-        !nombre.trim() ||
-        !email.trim() ||
-        !mensaje.trim()
+        typeof mensaje !== "string"
     ) {
         return res.status(400).json({
             error: "Completá todos los campos correctamente."
@@ -77,10 +64,35 @@ app.post("/api/contacto", contactLimiter, async (req, res) => {
     const emailLimpio = email.trim();
     const mensajeLimpio = mensaje.trim();
 
+    if (!nombreLimpio || !emailLimpio || !mensajeLimpio) {
+        return res.status(400).json({
+            error: "Todos los campos son obligatorios."
+        });
+    }
+
+    if (
+        nombreLimpio.length > 100 ||
+        emailLimpio.length > 254 ||
+        mensajeLimpio.length > 5000
+    ) {
+        return res.status(400).json({
+            error: "Uno de los campos supera la longitud permitida."
+        });
+    }
+
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailLimpio);
+
+    if (!emailValido) {
+        return res.status(400).json({
+            error: "Ingresá una dirección de email válida."
+        });
+    }
+
+    // Envío del correo mediante Resend
     try {
-        await transporter.sendMail({
-            from: `"Codexa Web" <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_USER,
+        const { data, error } = await resend.emails.send({
+            from: "Codexa <onboarding@resend.dev>",
+            to: [process.env.EMAIL_USER],
             replyTo: emailLimpio,
             subject: `Nueva consulta de ${nombreLimpio}`,
             text: `Nueva consulta recibida desde Codexa.
@@ -92,12 +104,19 @@ Mensaje:
 ${mensajeLimpio}`
         });
 
-        console.log("Correo enviado correctamente:", emailLimpio);
+        if (error) {
+            console.error("Error de Resend:", error);
+
+            return res.status(500).json({
+                error: "No pudimos enviar tu consulta."
+            });
+        }
+
+        console.log("Correo enviado correctamente:", data.id);
 
         return res.status(200).json({
             mensaje: "Consulta recibida correctamente."
         });
-
     } catch (error) {
         console.error("Error al enviar el correo:", error);
 
@@ -107,6 +126,7 @@ ${mensajeLimpio}`
     }
 });
 
+// Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`Backend de CODEXA activo en el puerto ${PORT}`);
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
