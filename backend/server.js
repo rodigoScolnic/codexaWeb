@@ -4,6 +4,23 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
+transporter.verify()
+    .then(() => {
+        console.log("✅ Nodemailer está listo para enviar correos");
+    })
+    .catch((error) => {
+        console.error("❌ Error al conectar con Gmail:", error.message);
+    });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,9 +52,9 @@ app.get("/", (req, res) => {
     });
 });
 
-app.post("/api/contacto", contactLimiter, (req, res) => {
+app.post("/api/contacto", contactLimiter, async (req, res) => {
     const { nombre, email, mensaje } = req.body;
-    console.log("Datos recibidos:", req.body);
+
     if (
         typeof nombre !== "string" ||
         typeof email !== "string" ||
@@ -51,15 +68,38 @@ app.post("/api/contacto", contactLimiter, (req, res) => {
         });
     }
 
-    console.log("Nueva consulta recibida:", {
-        nombre: nombre.trim(),
-        email: email.trim(),
-        mensaje: mensaje.trim()
-    });
+    const nombreLimpio = nombre.trim();
+    const emailLimpio = email.trim();
+    const mensajeLimpio = mensaje.trim();
 
-    res.status(200).json({
-        mensaje: "Consulta recibida correctamente."
-    });
+    try {
+        await transporter.sendMail({
+            from: `"Codexa Web" <${process.env.EMAIL_USER}>`,
+            to: process.env.EMAIL_USER,
+            replyTo: emailLimpio,
+            subject: `Nueva consulta de ${nombreLimpio}`,
+            text: `Nueva consulta recibida desde Codexa.
+
+Nombre: ${nombreLimpio}
+Email: ${emailLimpio}
+
+Mensaje:
+${mensajeLimpio}`
+        });
+
+        console.log("Correo enviado correctamente:", emailLimpio);
+
+        return res.status(200).json({
+            mensaje: "Consulta recibida correctamente."
+        });
+
+    } catch (error) {
+        console.error("Error al enviar el correo:", error);
+
+        return res.status(500).json({
+            error: "No pudimos enviar tu consulta. Intentá nuevamente más tarde."
+        });
+    }
 });
 
 app.listen(PORT, () => {
