@@ -93,3 +93,19 @@ if (contactForm && formStatus) {
         }, 4000);
     });
 }
+
+const text = "Tu idea, en buenas manos.";
+const typingElement = document.querySelector("#typing");
+
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+
+        setTimeout(typeWriter, 100);
+    }
+}
+
+typeWriter();
