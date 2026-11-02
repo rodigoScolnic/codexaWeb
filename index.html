@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/ec74e78deb.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -35,15 +32,18 @@
 
     <main>
         <div class="hero">
+            <video autoplay muted loop id="heroVideo">
+                <source src="/assets/images/hero.mp4" type="video/mp4">
+            </video>
             <div class="hero-content">
                 <div class="hero-text">
-                    <h2>Tu idea, <br> <span>en buenas manos</span></h2>
+                    <h2>Tu idea, <br> en buenas manos</h2>
                 </div>
                 <div class="hero-btn">
                     <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
-class="hero__btn"
-target="_blank"
-rel="noopener noreferrer"><span>Hablemos de tu proyecto</span><i class="fa-solid fa-arrow-right"></i></a>
+                    class="hero__btn"
+                    target="_blank"
+                    rel="noopener noreferrer"><span>Hablemos de tu proyecto</span></a>
                 </div>
             </div>
         </div>
@@ -53,69 +53,12 @@ rel="noopener noreferrer"><span>Hablemos de tu proyecto</span><i class="fa-solid
                 <h4>NUESTROS SERVICIOS</h4>
                 <div class="cards">
                     <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/devIcon.png" alt="">
+                        <div class="cardImg">
+                            <video src="/assets/images/desarrolloWeb.logo.mp4" autoplay muted loop></video>
                         </div>
-                        <div class="cardTitle">
-                            <h3>Desarrollo web</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>Sitios modernos, rapidos y responsivos. Desde landing pages hasta tiendas online.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/gearIcon.png" alt="">
-                        </div>
-                        <div class="cardTitle">
-                            <h3>Automatización</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>Optimiza tus procesos y ahorra tiempo con soluciones a medida y herramientas inteligentes.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/stackIcon.png" alt="">
-                        </div>
-                        <div class="cardTitle">
-                            <h3>Gestion de stock y clientes</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>Sistemas simples para organizar tu inventario, clientes y ventas.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/shieldIcon.png" alt="">
-                        </div>
-                        <div class="cardTitle">
-                            <h3>Domotica y seguridad</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>Integra tecnologia en tu hogar o negocio. Camaras, sensores y control dedsde tu celular</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/marketingIcon.png" alt="">
-                        </div>
-                        <div class="cardTitle">
-                            <h3>Marketing digital</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>Presencia digital, optimización básica para buscadores (SEO), campañas y medición de resultados.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cardLogo">
-                            <img src="./assets/images/userQIcon.png" alt="">
-                        </div>
-                        <div class="cardTitle">
-                            <h3>Consultoria tecnologica</h3>
-                        </div>
-                        <div class="cardP">
-                            <p>detectar tareas que se pueden simplificar y proponer soluciones concretas.</p>
+                        <div class="cardInfo">
+                            <h2>Desarrollo Web</h2>
+                            <p>Desarrollamos sitios web modernos, funcionales y adaptables a cualquier dispositivo
                         </div>
                     </div>
                 </div>
