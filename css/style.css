@@ -226,6 +226,14 @@ body.menu-open {
 
 /* -------------------------------- */
 
+
+.services {
+    padding: 30px 30px
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .services-container {
     padding: 30px 30px;
     display: flex;
@@ -274,6 +282,7 @@ body.menu-open {
     align-items: center;
     max-width: 500px;
     width: 100%;
+    height: 450px;
 }
 
 .cardImg img{
@@ -319,164 +328,155 @@ body.menu-open {
 /*------------------------------------------------*/
 
 .about {
-    height: auto;
-    background-image: url("/assets/images/aboutImg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 60vh;
+    padding: 30px 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .about-content {
-    background-color: rgba(0, 255, 255, 0.1);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 24px 20px;
     color: #00A3E0;
     display: flex;
-    align-items: center;
 }
 
-.aboutImg {
-    padding: 10px 0;
-}
-
-.about-content img {
-    display: none;
-}
-
-.about .aboutInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    max-width: 480px;
-}
-
-
-.aboutInfo span img {
-    width: 30px;
-}
-
-.aboutInfo {
-    padding-left: 0;
+.about-content video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .aboutInfo h4 {
-    font-size: 17px;
-}
+    font-size: 20px;
+    text-align: start;
+    display: inline-block;
 
-.aboutInfo p {
-    line-height: 1.6;
-    font-size: 15px;
-    padding: 10px 0;
-    color: #fff;
-}
+    background: linear-gradient(
+        90deg,
+        #00A3E0 0%,
+        cyan 50%,
+        #00A3E0 100%
+    );
 
-.aboutList {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    -webkit-background-clip: text;
+    background-clip: text;
 
-.aboutList span {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: #fff;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /*------------------------------*/
 
-.contactUs-bk {
-    background-image: url("/assets/images/formImage.png");
-    background-position: left;
-}
 
-.contactUs {
-    object-fit: cover;
-    backdrop-filter: blur(5px);
+
+/*-------------------------*/
+
+.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
-    padding: 16px 0;
 }
 
-.contactUs-text {
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutInfo {
+    margin: 50px 0; 
+}
+
+.aboutCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutCard {
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
     padding: 20px;
-}
-
-.contactUs-text h4 {
-    color: #00A3E0;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.contactUs-text p {
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.contactUs form {
-    max-width: 480px;
     width: 100%;
+    height: 250px;
+    margin: 10px 0;
+    border: 2px solid #00A3E0;
+}
+
+.aboutCard video {
+    height: 250px;
+}
+
+.aboutCard .aboutCardNumber {
+    border-bottom: 1px solid #00A3E0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 50px;
+    
+    background: linear-gradient(
+        90deg,
+        #00A3E0 0%,
+        cyan 50%,
+        #00A3E0 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.aboutCardInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    padding: 20px 0;
 }
 
-.contactUs .form-row {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.aboutCardInfo h2 {
+    text-align: center;
+    margin-top: 10px;
+    
+    background: linear-gradient(
+        90deg,
+        #00A3E0 0%,
+        cyan 50%,
+        #00A3E0 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-.contactUs input, .contactUs textarea {
-    margin: 12px 0;
-    background-color: transparent;
-    border: 2px solid #00a4e042;
-    width: 90%;
-    height: 40px;
-    padding: 10px 12px;
+.aboutCardInfo p {
+    text-align: center;
+    margin-top: 10px;
     color: white;
-}
-
-.contactUs input::placeholder, .contactUs textarea::placeholder {
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    color: white;
-    background-color: transparent ;
-    font-family: "Montserrat", sans-serif;
-}
-
-.contactUs input:focus, .contactUs textarea:focus {
-    outline: none;
-    border: 2px solid cyan;
-    transition: all .5s;
-}
-
-.contactUs button{
-    margin: 12px 0;
-    background-color: #00A3E0;
-    border: none;
-    width: 90%;
-    padding: 10px 12px;
-    color: white;
+    text-shadow: 0 0 5px rgb(26, 145, 214);
 }
 
 /*------------------------*/
