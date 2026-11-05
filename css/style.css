@@ -89,7 +89,7 @@ body.menu-open {
     width: 100%;
     height: calc(100dvh - 100px);
     position: fixed;
-    right: -500px;
+    right: -5000px;
     top: 100px;
     transition: right 0.3s ease-in-out;
     overflow-y: auto;
@@ -233,7 +233,6 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 .services-container {
     display: flex;
@@ -269,9 +268,9 @@ body.menu-open {
 }
 
 .card {
-    background-color: rgba(15, 202, 235, 0.171);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-    border: 2px solid #00A3E0;
+    background-color: rgba(15, 202, 235, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    border: 2px solid #00a4e071;
     border-radius: 10px;
     display: flex;
     color: #fff;
@@ -362,7 +361,7 @@ body.menu-open {
 }
 
 .about {
-    margin-top: 100px;
+    margin-top: 300px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -387,12 +386,9 @@ body.menu-open {
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
-
-.aboutCard {
-    background-color: rgba(15, 202, 235, 0.171);;
+    background-color: rgba(15, 202, 235, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -400,9 +396,8 @@ body.menu-open {
     align-items: left;
     padding: 10px;
     width: 100%;
-    height: 200px;
     margin: 10px 0;
-    border: 2px solid #00A3E0;
+    border: 2px solid #00a4e071;
 }
 
 .aboutCard .aboutCardNumber {
@@ -509,6 +504,25 @@ footer .socialMedia img {
     pointer-events: none;
 }
 
+.actionBtn {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+.actionBtn h2 {
+    text-align: center;
+    color: white;
+}
+
+.actionBtn a {
+    width: 300px;
+    text-align: center;
+}
+
 /*-----*/
 
 @media (max-width: 360px) {
@@ -532,7 +546,7 @@ footer .socialMedia img {
     }
 }
 
-@media (min-width: 480px) {
+@media (min-width: px) {
     .cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }

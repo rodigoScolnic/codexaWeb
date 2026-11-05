@@ -23,15 +23,18 @@
         <!-- Menú de navegación -->
 
         <menu class="nav-menu" id="navMenu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a class="option" href="#hero">Inicio</a></li>
+            <li><a class="option" href="#services">servicios</a></li>
+            <li><a class="option" href="#about">asi trabajamos</a></li>
+            <li><a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                    class="hero__btn"
+                    target="_blank"
+                    rel="noopener noreferrer">Contactos ahora!</a></li>
         </menu>
     </header>
 
     <main>
-        <div class="hero">
+        <div id="hero" class="hero">
             <video autoplay muted loop id="heroVideo">
                 <source src="/assets/images/hero.mp4" type="video/mp4">
             </video>
@@ -51,7 +54,7 @@
             </div>
         </div>
 
-        <section class="services">
+        <section id="services" class="services">
             <div class="services-container">
                 <h4>NUESTROS SERVICIOS</h4>
                 <div class="cards">
@@ -104,7 +107,7 @@
             </div>
         </section>
 
-        <section class="about"> 
+        <section id="about" class="about"> 
             <div class="about-content">
                 <div class="aboutInfo">
                     <h4>Nuestra forma de trabajar</h4>
@@ -138,7 +141,13 @@
         </section>
 
         
-
+        <seccion class="actionBtn">
+            <h2>Empeza ahora mismo</h2>
+            <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                    class="hero__btn"
+                    target="_blank"
+                    rel="noopener noreferrer"><span>Hablemos de tu proyecto</span></a>
+        </seccion>
         
 
         <footer>
