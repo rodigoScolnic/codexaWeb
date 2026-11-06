@@ -56,7 +56,7 @@ Tu negocio crece. Tu presencia digital también.`
     },
 
     apps: {
-        titulo: "Apps",
+        titulo: " Desarrollo de aplicaciones",
         descripcion: `Transformá tus ideas en aplicaciones que simplifican tareas, conectan personas y potencian tu negocio.
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -75,14 +75,67 @@ Ofrecé mejores experiencias a tus clientes.
 Tu idea puede convertirse en una herramienta que haga la diferencia.`
     },
 
-    automatizacion: {
-        titulo: "Automatización",
-        descripcion: "Desarrollamos soluciones para automatizar tareas, optimizar procesos y mejorar la productividad de tu negocio."
+    marketing: {
+        titulo: "Marketin digital",
+        descripcion: `Hacé crecer tu marca, conectá con nuevos clientes y destacate en el mundo digital con estrategias pensadas para tu negocio.
+
+¿QUÉ BENEFICIOS OBTENÉS?
+
+✦ Mayor alcance
+Llegá a más personas y potenciales clientes.
+
+✦ Identidad de marca
+Construí una imagen sólida y reconocible.
+
+✦ Más interacción
+Generá vínculos con tu comunidad y clientes.
+
+✦ Crecimiento estratégico
+Convertí tu presencia digital en nuevas oportunidades.
+
+Tu marca tiene algo para ofrecer. Hagamos que todos la conozcan.`
     },
 
     domotica: {
         titulo: "Domótica",
-        descripcion: "Integramos tecnología inteligente para controlar y automatizar diferentes espacios, mejorando la comodidad y seguridad."
+        descripcion: `Convertí tu hogar o espacio de trabajo en un entorno inteligente, conectando tecnología para simplificar tu día a día.
+
+¿QUÉ BENEFICIOS OBTENÉS?
+
+✦ Mayor comodidad
+Controlá dispositivos y espacios de forma sencilla.
+
+✦ Seguridad inteligente
+Monitoreá y protegé tus ambientes en tiempo real.
+
+✦ Ahorro energético
+Optimizá el consumo de electricidad y recursos.
+
+✦ Control remoto
+Gestioná tus dispositivos desde cualquier lugar.
+
+La tecnología trabaja por vos. Viví de una manera más inteligente.`
+    },
+
+    consultoria: {
+        titulo: "Consultorias personalizadas",
+        descripcion: `Cada negocio tiene desafíos diferentes. Te ayudamos a encontrar las mejores soluciones tecnológicas para crecer, optimizar recursos y alcanzar tus objetivos.
+
+¿QUÉ BENEFICIOS OBTENÉS?
+
+✦ Asesoramiento personalizado
+Analizamos tus necesidades y objetivos.
+
+✦ Decisiones estratégicas
+Identificá oportunidades de mejora y crecimiento.
+
+✦ Optimización de recursos
+Aprovechá mejor tus herramientas y procesos.
+
+✦ Soluciones eficientes
+Encontrá la tecnología adecuada para tu negocio.
+
+Las mejores decisiones comienzan con una buena estrategia.`
     }
 
 };

@@ -322,6 +322,25 @@ body.menu-open {
     cursor: pointer;
 }
 
+#modal-title {
+    font-size: 20px;
+    text-align: start;
+    display: inline-block;
+
+    background: linear-gradient(
+        90deg,
+        #00A3E0 0%,
+        cyan 50%,
+        #00A3E0 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
 #modal-description {
     white-space: pre-line;
     line-height: 1.8;
