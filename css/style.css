@@ -377,7 +377,8 @@ body.menu-open {
 }
 
 .services-container h4{
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
     text-align: start;
     display: inline-block;
 
@@ -477,7 +478,8 @@ body.menu-open {
 }
 
 .aboutInfo h4 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
     text-align: start;
     display: inline-block;
 
@@ -592,6 +594,221 @@ body.menu-open {
 }
 
 /*------------------------*/
+
+/* =====================================
+   WHY CHOOSE US
+===================================== */
+
+.why-us {
+    width: 100%;
+    padding: 80px 20px;
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.why-us-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-us-header {
+    max-width: 650px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.why-us-header h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #00A3E0,
+        cyan,
+        #00A3E0
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.why-us-header h2 {
+    color: white;
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 15px;
+}
+
+.why-us-header h2 span {
+    background: linear-gradient(
+        90deg,
+        #00A3E0,
+        cyan
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.why-us-header p {
+    color: #b8c5d1;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.why-us-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.why-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 220px;
+    padding: 30px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(15, 202, 235, 0.07);
+    border: 1px solid #00a4e071;
+    border-radius: 12px;
+
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.why-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: -65px;
+    right: -65px;
+
+    background: #00A3E0;
+    filter: blur(70px);
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+    border-color: #00d9ff;
+    box-shadow: 0 5px 25px rgba(0, 163, 224, 0.2);
+}
+
+.why-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    color: rgba(0, 163, 224, 0.5);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.why-card h3 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #00A3E0,
+        cyan
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.why-card h4 {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #b8c5d1;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.why-us-note {
+    color: #788b9b;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 750px) {
+
+    .why-us {
+        margin-top: 100px;
+        padding: 60px 15px;
+    }
+
+    .why-us-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .why-card {
+        min-height: 210px;
+        padding: 25px 18px;
+    }
+
+    .why-card h3 {
+        font-size: 32px;
+    }
+
+    .why-card h4 {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .why-card p {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card {
+        min-height: 180px;
+        padding: 25px;
+    }
+
+}
+
+/*----------*/
 
 footer {
     display: flex;
