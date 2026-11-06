@@ -29,7 +29,7 @@
             <li><a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
                     class="hero__btn"
                     target="_blank"
-                    rel="noopener noreferrer">Contactos ahora!</a></li>
+                    rel="noopener noreferrer">Contactanos ahora!</a></li>
         </menu>
     </header>
 
@@ -58,7 +58,7 @@
             <div class="services-container">
                 <h4>NUESTROS SERVICIOS</h4>
                 <div class="cards">
-                    <div class="card">
+                    <a  class="card open-modal" data-modal="web">
                         <div class="cardImg">
                             <img src="/assets/images/devIcon.png" alt="Desarrollo Web">
                         </div>
@@ -66,8 +66,8 @@
                             <h2>Desarrollo Web</h2>
                             <p>Desarrollamos sitios web modernos, funcionales y adaptables a cualquier dispositivo.</p>
                         </div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a class="card open-modal" data-modal="apps">
                         <div class="cardImg">
                             <img src="/assets/images/softwareIcon.png" alt="Desarrollo Web">
                         </div>
@@ -75,8 +75,8 @@
                             <h2>Desarrollo de Apps</h2>
                             <p>Diseñamos y desarrollamos aplicaciones personalizadas para resolver necesidades específicas de tu negocio.</p>
                         </div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a class="card">
                         <div class="cardImg">
                             <img src="/assets/images/marketingIcon.png" alt="Desarrollo Web">
                         </div>
@@ -84,8 +84,8 @@
                             <h2>Markeing digital</h2>
                             <p>Desarrollamos estrategias digitales para mejorar la visibilidad de tu marca, conectar con tu público y generar oportunidades comerciales.</p>
                         </div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a class="card">
                         <div class="cardImg">
                             <img src="/assets/images/domoticaIcon.png" alt="Desarrollo Web">
                         </div>
@@ -93,8 +93,8 @@
                             <h2>Domotica y automatización</h2>
                             <p>Desarrollamos soluciones de domótica y automatización para mejorar la comodidad, seguridad y eficiencia de tu hogar o negocio.</p>
                         </div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a class="card">
                         <div class="cardImg">
                             <img src="/assets/images/consultoriaIcon.png" alt="Desarrollo Web">
                         </div>
@@ -102,10 +102,32 @@
                             <h2>Consultoría tecnológica</h2>
                             <p>Ofrecemos asesoramiento especializado para ayudarte a tomar decisiones informadas sobre la implementación de soluciones tecnológicas.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- modal services -->
+
+        <div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <button class="close-modal" aria-label="Cerrar modal">
+            &times;
+        </button>
+
+        <h2 id="modal-title"></h2>
+
+        <p id="modal-description"></p>
+
+        <button class="modal-btn">Consulta por este servicio</button>
+
+    </div>
+
+</div>
+
+        <div class="modal"></div>
 
         <section id="about" class="about"> 
             <div class="about-content">
@@ -141,16 +163,17 @@
         </section>
 
         
-        <seccion class="actionBtn">
+        
+        
+
+        <footer>
+            <seccion class="actionBtn">
             <h2>Empeza ahora mismo</h2>
             <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
                     class="hero__btn"
                     target="_blank"
                     rel="noopener noreferrer"><span>Hablemos de tu proyecto</span></a>
         </seccion>
-        
-
-        <footer>
             <div class="flogo">
                 <img src="./assets/images/codexa_logo.png" alt="">
             </div>
