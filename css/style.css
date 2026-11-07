@@ -931,3 +931,177 @@ video {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Búsqueda de talento */
+.careers {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+    align-items: center;
+    gap: clamp(34px, 7vw, 90px);
+    padding-top: clamp(82px, 10vw, 132px);
+}
+
+.careers-copy .section-title {
+    max-width: 590px;
+}
+
+.careers-copy .section-description {
+    margin-inline: 0;
+}
+
+.careers-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(27px, 4vw, 42px);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(0, 163, 224, 0.16), transparent 55%),
+        linear-gradient(145deg, rgba(15, 202, 235, 0.08), rgba(11, 19, 43, 0.7));
+    box-shadow: var(--shadow-blue);
+    text-align: center;
+}
+
+.careers-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(0, 163, 224, 0.1);
+    color: var(--color-cyan);
+    font-size: 1.8rem;
+}
+
+.careers-card-copy h3 {
+    margin-top: 20px;
+    color: var(--color-cyan);
+    font-size: 1.35rem;
+}
+
+.careers-card-copy p {
+    max-width: 390px;
+    margin-top: 9px;
+    color: var(--color-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.cv-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.cv-upload {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 24px;
+    padding: 11px 20px;
+    border: 1px dashed rgba(101, 234, 255, 0.65);
+    border-radius: 9px;
+    color: var(--color-cyan);
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background 180ms ease, border-color 180ms ease;
+}
+
+.cv-upload:hover {
+    border-color: var(--color-cyan);
+    background: rgba(0, 163, 224, 0.1);
+}
+
+.cv-upload span {
+    font-size: 1.25rem;
+}
+
+.cv-input:focus-visible + .cv-file-name {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 4px;
+}
+
+.cv-file-name {
+    max-width: 100%;
+    margin-top: 12px;
+    overflow-wrap: anywhere;
+    color: #91a7b7;
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+.careers-whatsapp {
+    display: inline-flex;
+    min-height: 49px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: 1px solid var(--color-blue);
+    border-radius: 9px;
+    background: rgba(0, 163, 224, 0.12);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.careers-whatsapp:hover:not([aria-disabled="true"]) {
+    transform: translateY(-2px);
+    background: rgba(0, 163, 224, 0.23);
+}
+
+.careers-whatsapp[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.42;
+}
+
+.careers-whatsapp span {
+    color: var(--color-cyan);
+}
+
+.careers-note {
+    max-width: 360px;
+    margin-top: 14px;
+    color: #8295a3;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+    .careers {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .careers-copy {
+        text-align: center;
+    }
+
+    .careers-copy .section-description {
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .careers-card {
+        padding: 27px 20px;
+    }
+
+    .careers-whatsapp {
+        width: 100%;
+    }
+}
