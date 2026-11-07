@@ -135,45 +135,73 @@
 
         <section id="projects" class="projects section-shell" aria-labelledby="projects-title">
             <div class="section-heading">
-                <p class="section-kicker">TRABAJO REAL</p>
-                <h2 class="section-title" id="projects-title">Proyectos que toman forma</h2>
-                <p class="section-description">Diseñamos y desarrollamos experiencias digitales funcionales, pensadas para personas y negocios reales.</p>
+                <p class="section-kicker">NUESTRO TRABAJO</p>
+                <h2 class="section-title" id="projects-title">Ideas que toman forma</h2>
+                <p class="section-description">Una muestra de experiencias digitales que diseñamos y desarrollamos de principio a fin.</p>
             </div>
 
-            <article class="project-card">
-                <div class="project-copy">
-                    <span class="project-tag">E-COMMERCE · DESARROLLO WEB</span>
-                    <h3>VerdeBendito</h3>
-                    <p>Una tienda online de plantas, macetas y objetos decorativos. Un proyecto que combina identidad visual, catálogo organizado y una experiencia de compra adaptable a distintos dispositivos.</p>
-                    <ul class="project-features">
-                        <li>Catálogo de productos y categorías</li>
-                        <li>Búsqueda y navegación intuitiva</li>
-                        <li>Carrito de compras</li>
-                        <li>Diseño adaptable a escritorio y móvil</li>
-                    </ul>
-                    <a class="project-visit" href="https://verdebendito.onrender.com/" target="_blank" rel="noopener noreferrer">
-                        Visitar proyecto <span aria-hidden="true">↗</span>
-                    </a>
+            <div class="projects-carousel" aria-roledescription="carrusel" aria-label="Proyectos destacados">
+                <div class="projects-track" id="projectsTrack">
+                    <article class="project-slide project-verde is-active" data-project="0" aria-label="Proyecto 1 de 2: VerdeBendito">
+                        <div class="project-copy">
+                            <span class="project-tag">E-COMMERCE · DESARROLLO WEB</span>
+                            <h3>VerdeBendito<span class="project-index">01 / 02</span></h3>
+                            <p>Una tienda online de plantas, macetas y objetos decorativos. Una experiencia cálida, simple y adaptable para descubrir productos y comprar.</p>
+                            <ul class="project-features">
+                                <li>Catálogo y categorías de productos</li>
+                                <li>Búsqueda y navegación intuitiva</li>
+                                <li>Carrito de compras</li>
+                                <li>Diseño adaptable a escritorio y móvil</li>
+                            </ul>
+                            <a class="project-visit" href="https://verdebendito.onrender.com/" target="_blank" rel="noopener noreferrer">Visitar proyecto <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <div class="project-visual verde-visual">
+                            <div class="project-visual-top"><span>VERDEBENDITO</span><span>PLANTAS · DECO · HOGAR</span></div>
+                            <div class="verde-preview">
+                                <div class="verde-preview-copy"><small>UN TOQUE NATURAL</small><strong>Verde en<br>casa.</strong><span>Descubrí tu próximo rincón favorito.</span></div>
+                                <img src="https://verdebendito.onrender.com/assets/images/hero.jpg" alt="Vista de productos de VerdeBendito" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                            <div class="visual-caption"><span>01</span><span>UNA EXPERIENCIA NATURAL</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-slide project-alta" data-project="1" aria-label="Proyecto 2 de 2: AltaBurger" aria-hidden="true">
+                        <div class="project-copy">
+                            <span class="project-tag">E-COMMERCE · EXPERIENCIA INTERACTIVA</span>
+                            <h3>AltaBurger<span class="project-index">02 / 02</span></h3>
+                            <p>Una hamburguesería digital donde cada persona puede crear su propia burger, elegir ingredientes, ver el precio en tiempo real y simular una compra.</p>
+                            <ul class="project-features">
+                                <li>Constructor personalizado de hamburguesas</li>
+                                <li>Ingredientes y precios dinámicos</li>
+                                <li>Carrito con cantidades y subtotales</li>
+                                <li>Checkout de demostración, 100% frontend</li>
+                            </ul>
+                            <a class="project-visit" href="https://github.com/rodigoScolnic/AltaBurger" target="_blank" rel="noopener noreferrer">Explorar proyecto <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <div class="project-visual alta-visual">
+                            <div class="project-visual-top"><span>ALTABURGER</span><span>YOUR BURGER · YOUR RULES</span></div>
+                            <div class="alta-preview">
+                                <div class="alta-preview-copy"><small>BURGERS SIN REGLAS</small><strong>NO HAY DOS<br><em>BURGERS</em><br>IGUALES.</strong><span>La tuya. A tu manera.</span></div>
+                                <img src="https://raw.githubusercontent.com/rodigoScolnic/AltaBurger/master/img/bigburger.jpg" alt="Hamburguesa de AltaBurger" loading="lazy">
+                                <span class="alta-stamp">ARMÁ<br>LA TUYA</span>
+                            </div>
+                            <div class="visual-caption"><span>02</span><span>CREÁ TU PROPIA BURGER</span></div>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="project-previews" aria-label="Vistas previas del sitio VerdeBendito">
-                    <div class="preview-desktop">
-                        <div class="preview-label"><span class="preview-dot"></span> VISTA ESCRITORIO</div>
-                        <div class="desktop-frame">
-                            <div class="frame-toolbar" aria-hidden="true"><i></i><i></i><i></i><span>verdebendito.onrender.com</span></div>
-                            <iframe src="https://verdebendito.onrender.com/" title="Vista previa de VerdeBendito en escritorio" loading="lazy"></iframe>
-                        </div>
+                <div class="carousel-controls">
+                    <div class="carousel-pagination" aria-label="Elegir proyecto">
+                        <button class="carousel-dot active" type="button" data-slide="0" aria-label="Ver VerdeBendito" aria-current="true"></button>
+                        <button class="carousel-dot" type="button" data-slide="1" aria-label="Ver AltaBurger" aria-current="false"></button>
                     </div>
-                    <div class="preview-mobile">
-                        <div class="preview-label"><span class="preview-dot"></span> VISTA MÓVIL</div>
-                        <div class="mobile-frame">
-                            <div class="mobile-speaker" aria-hidden="true"></div>
-                            <iframe src="https://verdebendito.onrender.com/" title="Vista previa de VerdeBendito en celular" loading="lazy"></iframe>
-                        </div>
+                    <span class="carousel-counter" id="projectCounter">01 <i>/</i> 02</span>
+                    <div class="carousel-arrows">
+                        <button type="button" id="projectPrev" aria-label="Proyecto anterior" disabled>←</button>
+                        <button type="button" id="projectNext" aria-label="Proyecto siguiente">→</button>
                     </div>
                 </div>
-                <p class="preview-note">Las vistas previas se cargan desde el sitio publicado. Si no se muestran dentro de esta página, podés abrir el proyecto directamente.</p>
-            </article>
+            </div>
         </section>
 
         <section id="about" class="about section-shell" aria-labelledby="about-title">
