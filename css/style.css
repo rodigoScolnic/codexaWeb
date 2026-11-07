@@ -353,6 +353,11 @@ body.menu-open {
     color: #00A3E0;
 }
 
+#modal-description .head-info {
+    font-style: italic;
+    color: white;
+}
+
 @keyframes aparecer {
 
     from {

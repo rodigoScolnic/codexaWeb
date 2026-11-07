@@ -36,23 +36,23 @@ const contenido = {
 
     web: {
         titulo: "Desarrollo web",
-        descripcion: `Tener una web es darle a tu negocio una presencia profesional, generar confianza y llegar a nuevos clientes.
+        descripcion: ` <span class="head-info">Tener una web es darle a tu negocio una presencia profesional, generar confianza y llegar a nuevos clientes.</span> 
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ <span>Mayor visibilidad</span> 
+<span>✦ Mayor visibilidad</span> 
 Llegá a más personas y potenciales clientes.
 
-✦ <span>Imagen profesional</span>
+<span>✦ Imagen profesional</span>
 Transmití confianza y destacate de la competencia.
 
-✦ <span>Disponibilidad 24/7</span>
+<span>✦ Disponibilidad 24/7</span>
 Mostrá tus servicios en cualquier momento.
 
-✦ <span>Más oportunidades</span>
+<span>✦ Más oportunidades</span>
 Convertí visitas en consultas y ventas.
 
-Tu negocio crece. Tu presencia digital también.`
+<span class="head-info">Tu negocio crece. Tu presencia digital también.</span>`
     },
 
     apps: {
