@@ -40,16 +40,16 @@ const contenido = {
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ Mayor visibilidad
+✦ <span>Mayor visibilidad</span> 
 Llegá a más personas y potenciales clientes.
 
-✦ Imagen profesional
+✦ <span>Imagen profesional</span>
 Transmití confianza y destacate de la competencia.
 
-✦ Disponibilidad 24/7
+✦ <span>Disponibilidad 24/7</span>
 Mostrá tus servicios en cualquier momento.
 
-✦ Más oportunidades
+✦ <span>Más oportunidades</span>
 Convertí visitas en consultas y ventas.
 
 Tu negocio crece. Tu presencia digital también.`
@@ -123,7 +123,7 @@ La tecnología trabaja por vos. Viví de una manera más inteligente.`
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ Asesoramiento personalizado
+✦Asesoramiento personalizado
 Analizamos tus necesidades y objetivos.
 
 ✦ Decisiones estratégicas
@@ -155,7 +155,7 @@ document.querySelectorAll("a.open-modal").forEach(link => {
 
         title.textContent = contenido[tipo].titulo;
 
-        description.textContent = contenido[tipo].descripcion;
+        description.innerHTML = contenido[tipo].descripcion;
 
         modal.classList.add("active");
 

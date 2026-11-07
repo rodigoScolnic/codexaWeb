@@ -263,7 +263,7 @@ body.menu-open {
     padding: 40px;
     border-radius: 15px;
 
-    height: 90vh;
+    height: 100vh;
 
     animation: aparecer 0.3s ease;
 }
@@ -343,9 +343,13 @@ body.menu-open {
 
 #modal-description {
     white-space: pre-line;
-    line-height: 1.8;
+    line-height: 1.5;
     font-size: 15px;
     color: #d1d9e6;
+}
+
+#modal-description span{
+    color: #00A3E0;
 }
 
 @keyframes aparecer {
