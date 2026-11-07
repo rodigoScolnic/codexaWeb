@@ -36,11 +36,11 @@ const contenido = {
 
     web: {
         titulo: "Desarrollo web",
-        descripcion: ` <span class="head-info">Tener una web es darle a tu negocio una presencia profesional, generar confianza y llegar a nuevos clientes.</span> 
+        descripcion: `<span class="head-info">Tener una web es darle a tu negocio una presencia profesional, generar confianza y llegar a nuevos clientes.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-<span>✦ Mayor visibilidad</span> 
+<span>✦ Mayor visibilidad</span>
 Llegá a más personas y potenciales clientes.
 
 <span>✦ Imagen profesional</span>
@@ -56,86 +56,87 @@ Convertí visitas en consultas y ventas.
     },
 
     apps: {
-        titulo: " Desarrollo de aplicaciones",
-        descripcion: `Transformá tus ideas en aplicaciones que simplifican tareas, conectan personas y potencian tu negocio.
+        titulo: "Desarrollo de aplicaciones",
+        descripcion: `<span class="head-info">Transformá tus ideas en aplicaciones que simplifican tareas, conectan personas y potencian tu negocio.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ Soluciones a medida
+<span>✦ Soluciones a medida</span>
 Aplicaciones adaptadas a tus necesidades.
 
-✦ Mayor productividad
+<span>✦ Mayor productividad</span>
 Optimizá tareas y procesos cotidianos.
 
-✦ Acceso desde cualquier lugar
+<span>✦ Acceso desde cualquier lugar</span>
 Conectá con tus herramientas cuando las necesites.
 
-✦ Nuevas oportunidades
+<span>✦ Nuevas oportunidades</span>
 Ofrecé mejores experiencias a tus clientes.
-Tu idea puede convertirse en una herramienta que haga la diferencia.`
+
+<span class="head-info">Tu idea puede convertirse en una herramienta que haga la diferencia.</span>`
     },
 
     marketing: {
-        titulo: "Marketin digital",
-        descripcion: `Hacé crecer tu marca, conectá con nuevos clientes y destacate en el mundo digital con estrategias pensadas para tu negocio.
+        titulo: "Marketing digital",
+        descripcion: `<span class="head-info">Hacé crecer tu marca, conectá con nuevos clientes y destacate en el mundo digital con estrategias pensadas para tu negocio.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ Mayor alcance
+<span>✦ Mayor alcance</span>
 Llegá a más personas y potenciales clientes.
 
-✦ Identidad de marca
+<span>✦ Identidad de marca</span>
 Construí una imagen sólida y reconocible.
 
-✦ Más interacción
+<span>✦ Más interacción</span>
 Generá vínculos con tu comunidad y clientes.
 
-✦ Crecimiento estratégico
+<span>✦ Crecimiento estratégico</span>
 Convertí tu presencia digital en nuevas oportunidades.
 
-Tu marca tiene algo para ofrecer. Hagamos que todos la conozcan.`
+<span class="head-info">Tu marca tiene algo para ofrecer. Hagamos que todos la conozcan.</span>`
     },
 
     domotica: {
         titulo: "Domótica",
-        descripcion: `Convertí tu hogar o espacio de trabajo en un entorno inteligente, conectando tecnología para simplificar tu día a día.
+        descripcion: `<span class="head-info">Convertí tu hogar o espacio de trabajo en un entorno inteligente, conectando tecnología para simplificar tu día a día.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦ Mayor comodidad
+<span>✦ Mayor comodidad</span>
 Controlá dispositivos y espacios de forma sencilla.
 
-✦ Seguridad inteligente
+<span>✦ Seguridad inteligente</span>
 Monitoreá y protegé tus ambientes en tiempo real.
 
-✦ Ahorro energético
+<span>✦ Ahorro energético</span>
 Optimizá el consumo de electricidad y recursos.
 
-✦ Control remoto
+<span>✦ Control remoto</span>
 Gestioná tus dispositivos desde cualquier lugar.
 
-La tecnología trabaja por vos. Viví de una manera más inteligente.`
+<span class="head-info">La tecnología trabaja por vos. Viví de una manera más inteligente.</span>`
     },
 
     consultoria: {
-        titulo: "Consultorias personalizadas",
-        descripcion: `Cada negocio tiene desafíos diferentes. Te ayudamos a encontrar las mejores soluciones tecnológicas para crecer, optimizar recursos y alcanzar tus objetivos.
+        titulo: "Consultorías personalizadas",
+        descripcion: `<span class="head-info">Cada negocio tiene desafíos diferentes. Te ayudamos a encontrar las mejores soluciones tecnológicas para crecer, optimizar recursos y alcanzar tus objetivos.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
 
-✦Asesoramiento personalizado
+<span>✦ Asesoramiento personalizado</span>
 Analizamos tus necesidades y objetivos.
 
-✦ Decisiones estratégicas
+<span>✦ Decisiones estratégicas</span>
 Identificá oportunidades de mejora y crecimiento.
 
-✦ Optimización de recursos
+<span>✦ Optimización de recursos</span>
 Aprovechá mejor tus herramientas y procesos.
 
-✦ Soluciones eficientes
+<span>✦ Soluciones eficientes</span>
 Encontrá la tecnología adecuada para tu negocio.
 
-Las mejores decisiones comienzan con una buena estrategia.`
+<span class="head-info">Las mejores decisiones comienzan con una buena estrategia.</span>`
     }
 
 };
