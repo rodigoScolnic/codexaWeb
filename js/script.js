@@ -257,3 +257,49 @@ document.addEventListener("keydown", event => {
         }
     }
 });
+
+
+// Carrusel de proyectos destacados
+(() => {
+    const track = document.getElementById("projectsTrack");
+    const slides = [...document.querySelectorAll(".project-slide")];
+    const dots = [...document.querySelectorAll(".carousel-dot")];
+    const previous = document.getElementById("projectPrev");
+    const next = document.getElementById("projectNext");
+    const counter = document.getElementById("projectCounter");
+    if (!track || slides.length === 0 || !previous || !next || !counter) return;
+
+    let current = 0;
+    const showProject = index => {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        track.style.transform = `translateX(-${current * 100}%)`;
+        slides.forEach((slide, i) => {
+            const active = i === current;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+            slide.querySelectorAll("a").forEach(link => {
+                if (active) link.removeAttribute("tabindex");
+                else link.setAttribute("tabindex", "-1");
+            });
+        });
+        dots.forEach((dot, i) => {
+            const active = i === current;
+            dot.classList.toggle("active", active);
+            dot.setAttribute("aria-current", String(active));
+        });
+        counter.innerHTML = `0${current + 1} <i>/</i> 0${slides.length}`;
+        previous.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+    };
+    previous.addEventListener("click", () => showProject(current - 1));
+    next.addEventListener("click", () => showProject(current + 1));
+    dots.forEach(dot => dot.addEventListener("click", () => showProject(Number(dot.dataset.slide))));
+    const carousel = track.closest(".projects-carousel");
+    let touchStart = 0;
+    carousel.addEventListener("touchstart", event => { touchStart = event.changedTouches[0].clientX; }, { passive: true });
+    carousel.addEventListener("touchend", event => {
+        const delta = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(delta) > 55) showProject(current + (delta < 0 ? 1 : -1));
+    }, { passive: true });
+    showProject(0);
+})();
