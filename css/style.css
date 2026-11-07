@@ -1563,3 +1563,32 @@ video {
 @media (prefers-reduced-motion: reduce) {
     .projects-track, .project-slide, .carousel-dot { transition: none; }
 }
+
+
+/* Vistas reales de los proyectos: escritorio + móvil */
+.project-device-showcase { --visual-bg: #151d23; --visual-text: #f4f7f9; min-height: 390px; }
+.device-previews { display:flex; align-items:center; justify-content:center; gap:clamp(14px,3vw,28px); flex:1; min-height:0; padding:16px 4px; }
+.device-preview { display:flex; flex-direction:column; align-items:center; gap:10px; min-width:0; }
+.device-label { color:#aebbc4; font-size:.58rem; font-weight:800; letter-spacing:.16em; }
+.desktop-preview { flex:1; max-width:440px; }
+.desktop-device { width:100%; padding:7px 7px 9px; border:1px solid #53616b; border-radius:10px; background:#26323a; box-shadow:0 16px 32px #0006; }
+.device-browser-bar { height:17px; display:flex; align-items:center; gap:4px; padding:0 5px 6px; }
+.device-browser-bar i { width:5px; height:5px; border-radius:50%; background:#82909a; }
+.device-browser-bar span { margin-left:7px; color:#aebbc4; font-size:7px; }
+.desktop-screen { position:relative; width:100%; aspect-ratio:16/10; overflow:hidden; background:#fff; border-radius:3px; }
+.desktop-screen iframe { position:absolute; inset:0; width:1280px; height:800px; border:0; transform:scale(.32); transform-origin:top left; }
+.mobile-preview { flex:0 0 auto; }
+.phone-device { position:relative; width:116px; height:230px; padding:7px 5px; border:2px solid #77838b; border-radius:19px; background:#090d10; box-shadow:0 16px 32px #0007; }
+.phone-camera { position:absolute; z-index:2; top:5px; left:50%; width:25px; height:5px; border-radius:8px; background:#090d10; transform:translateX(-50%); }
+.phone-screen { width:100%; height:100%; overflow:hidden; border-radius:13px; background:#fff; }
+.phone-screen iframe { width:390px; height:844px; border:0; transform:scale(.272); transform-origin:top left; }
+@media (max-width:520px) {
+ .project-device-showcase { min-height:300px; }
+ .device-previews { gap:13px; padding:12px 0; }
+ .desktop-preview { max-width:calc(100% - 130px); }
+ .desktop-screen iframe { transform:scale(.235); }
+ .phone-device { width:91px; height:190px; border-radius:16px; padding:6px 4px; }
+ .phone-screen { border-radius:11px; }
+ .phone-screen iframe { transform:scale(.211); }
+ .device-browser-bar span { font-size:6px; }
+}
