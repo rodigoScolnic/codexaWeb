@@ -1374,3 +1374,192 @@ video {
         width: 100%;
     }
 }
+
+
+/* Carrusel de proyectos: cada demo conserva su propia identidad visual */
+.projects-carousel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 163, 224, .25);
+    border-radius: 24px;
+    background: #101a20;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .24);
+}
+.projects-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100%, 1fr));
+    transition: transform 550ms cubic-bezier(.2,.75,.25,1);
+}
+.project-slide {
+    display: grid;
+    grid-template-columns: minmax(270px, .82fr) minmax(0, 1.18fr);
+    align-items: stretch;
+    gap: clamp(28px, 5vw, 65px);
+    min-width: 0;
+    padding: clamp(26px, 4.5vw, 54px);
+    opacity: .45;
+    transition: opacity 400ms ease;
+}
+.project-slide.is-active { opacity: 1; }
+.project-slide .project-copy { align-self: center; }
+.project-slide .project-copy h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.project-index {
+    padding: 6px 9px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    color: var(--color-cyan);
+    font-size: .65rem;
+    letter-spacing: .1em;
+    vertical-align: middle;
+}
+.project-slide .project-features li::before { color: var(--project-accent, var(--color-cyan)); }
+.project-slide .project-visit {
+    border-color: var(--project-accent, var(--color-blue));
+    background: color-mix(in srgb, var(--project-accent, var(--color-blue)) 13%, transparent);
+}
+.project-slide .project-visit span { color: var(--project-accent, var(--color-cyan)); }
+.project-visual {
+    display: flex;
+    min-width: 0;
+    min-height: 390px;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 17px;
+    background: var(--visual-bg);
+    color: var(--visual-text);
+}
+.project-visual-top, .visual-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .58rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+.project-visual-top span:last-child, .visual-caption span:last-child { opacity: .65; }
+.verde-visual {
+    --project-accent: #b6d59b;
+    --visual-bg: #e9eee0;
+    --visual-text: #234431;
+}
+.verde-preview {
+    position: relative;
+    display: flex;
+    min-height: 275px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 5px;
+}
+.verde-preview-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.verde-preview-copy small { font-size: .58rem; font-weight: 800; letter-spacing: .17em; }
+.verde-preview-copy strong { font: 600 clamp(2.8rem, 5vw, 4.8rem)/.9 Georgia, serif; letter-spacing: -.06em; }
+.verde-preview-copy span { max-width: 155px; font-size: .72rem; line-height: 1.5; }
+.verde-preview img {
+    width: 48%;
+    height: 240px;
+    border-radius: 48% 48% 12px 12px;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+.alta-visual {
+    --project-accent: #f2e75d;
+    --visual-bg: #20251d;
+    --visual-text: #f6f3e5;
+}
+.alta-preview {
+    position: relative;
+    display: flex;
+    min-height: 275px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px 2px;
+}
+.alta-preview-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.alta-preview-copy small { color: #f2e75d; font-size: .58rem; font-weight: 800; letter-spacing: .15em; }
+.alta-preview-copy strong { font: 700 clamp(2.4rem, 4.8vw, 4.3rem)/.91 'Fira Sans', sans-serif; letter-spacing: -.07em; }
+.alta-preview-copy strong em { color: #f2e75d; font-style: normal; }
+.alta-preview-copy>span { color: #c4c9b9; font-size: .72rem; }
+.alta-preview img { width: 49%; height: 230px; border-radius: 50%; object-fit: cover; transform: rotate(5deg); box-shadow: 0 20px 45px #0008; }
+.alta-stamp {
+    position: absolute;
+    right: 4%;
+    top: 12%;
+    display: grid;
+    width: 72px;
+    height: 72px;
+    place-content: center;
+    border-radius: 50%;
+    background: #f2e75d;
+    color: #20251d;
+    font-size: .58rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    transform: rotate(10deg);
+}
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px clamp(26px, 4.5vw, 54px);
+    border-top: 1px solid rgba(255,255,255,.09);
+    background: rgba(4, 11, 16, .38);
+}
+.carousel-pagination { display: flex; align-items: center; gap: 8px; }
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    background: #62717b;
+    transition: width 220ms ease, background 220ms ease;
+}
+.carousel-dot.active { width: 28px; background: var(--color-cyan); }
+.carousel-counter { margin-right: auto; color: #c5d0d8; font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+.carousel-counter i { color: #758691; font-style: normal; margin: 0 5px; }
+.carousel-arrows { display: flex; gap: 8px; }
+.carousel-arrows button {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    border: 1px solid rgba(101, 234, 255, .35);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+.carousel-arrows button:not(:disabled):hover { background: var(--color-cyan); color: #07131b; }
+.carousel-arrows button:disabled { cursor: not-allowed; opacity: .3; }
+@media (max-width: 900px) {
+    .project-slide { grid-template-columns: minmax(0, 1fr); }
+    .project-visual { min-height: 340px; }
+    .verde-preview, .alta-preview { min-height: 225px; }
+}
+@media (max-width: 520px) {
+    .project-slide { padding: 23px 18px; gap: 25px; }
+    .project-visual { min-height: 290px; padding: 15px; }
+    .project-visual-top { font-size: .48rem; }
+    .verde-preview, .alta-preview { min-height: 210px; }
+    .verde-preview img, .alta-preview img { height: 175px; }
+    .verde-preview-copy strong { font-size: 3rem; }
+    .alta-preview-copy strong { font-size: 2.5rem; }
+    .alta-stamp { width: 60px; height: 60px; font-size: .5rem; }
+    .visual-caption { font-size: .48rem; }
+    .carousel-controls { padding: 14px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .projects-track, .project-slide, .carousel-dot { transition: none; }
+}
