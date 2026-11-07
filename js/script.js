@@ -235,3 +235,43 @@ document.addEventListener("keydown", event => {
         }
     }
 });
+
+
+// Selección del CV y apertura de WhatsApp.
+// Por seguridad, el navegador no permite adjuntar el archivo automáticamente.
+const cvInput = document.getElementById("cvFile");
+const cvFileName = document.getElementById("cvFileName");
+const careersWhatsapp = document.getElementById("careersWhatsapp");
+
+if (cvInput && cvFileName && careersWhatsapp) {
+    cvInput.addEventListener("change", () => {
+        const file = cvInput.files && cvInput.files[0];
+
+        if (!file) {
+            cvFileName.textContent = "Todavía no seleccionaste ningún archivo.";
+            careersWhatsapp.setAttribute("aria-disabled", "true");
+            careersWhatsapp.href = "#";
+            return;
+        }
+
+        if (!file.name.toLowerCase().endsWith(".pdf") || (file.type && file.type !== "application/pdf")) {
+            cvInput.value = "";
+            cvFileName.textContent = "Por favor, seleccioná tu CV en formato PDF.";
+            careersWhatsapp.setAttribute("aria-disabled", "true");
+            careersWhatsapp.href = "#";
+            return;
+        }
+
+        cvFileName.textContent = "CV seleccionado: " + file.name;
+        const message = "Hola, equipo de Codexa. Me gustaría postularme para trabajar con ustedes. Ya seleccioné mi CV y lo adjunto en este chat.";
+        careersWhatsapp.href = WHATSAPP_BASE + encodeURIComponent(message);
+        careersWhatsapp.setAttribute("aria-disabled", "false");
+    });
+
+    careersWhatsapp.addEventListener("click", event => {
+        if (careersWhatsapp.getAttribute("aria-disabled") === "true") {
+            event.preventDefault();
+            cvFileName.textContent = "Primero seleccioná tu CV en formato PDF.";
+        }
+    });
+}
