@@ -263,7 +263,7 @@ body.menu-open {
     padding: 40px;
     border-radius: 15px;
 
-    height: 100vh;
+    height: 70vh;
 
     animation: aparecer 0.3s ease;
 }
