@@ -101,6 +101,28 @@ Gestioná tus dispositivos desde cualquier lugar.
 <span class="head-info">La tecnología trabaja por vos. Viví de una manera más inteligente.</span>`
     },
 
+    procesos: {
+        titulo: "Automatización de procesos",
+        mensaje: "Hola, me interesa consultar por el servicio de automatización de procesos.",
+        descripcion: `<span class="head-info">Simplificá el trabajo de tu negocio automatizando tareas repetitivas y conectando las herramientas que usás todos los días.</span>
+
+¿QUÉ BENEFICIOS OBTENÉS?
+
+<span>✦ Ahorro de tiempo</span>
+Automatizá tareas manuales para enfocarte en lo importante.
+
+<span>✦ Menos errores</span>
+Reducí equivocaciones en tareas repetitivas y carga de información.
+
+<span>✦ Procesos conectados</span>
+Integrá aplicaciones, formularios y sistemas para que trabajen en conjunto.
+
+<span>✦ Mayor productividad</span>
+Agilizá flujos de trabajo y optimizá los recursos de tu negocio.
+
+<span class="head-info">Hacé que tus procesos trabajen de forma más simple y eficiente.</span>`
+    },
+
     consultoria: {
         titulo: "Consultoría tecnológica",
         mensaje: "Hola, me interesa consultar por el servicio de consultoría tecnológica.",
