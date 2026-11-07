@@ -1,41 +1,21 @@
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const navMenu = document.getElementById('navMenu');
-const aMenu = document.querySelectorAll(".option")
+"use strict";
 
-if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', () => {
-        const isOpen = hamburgerBtn.classList.toggle('open');
-
-        navMenu.classList.toggle('open', isOpen);
-        document.body.classList.toggle('menu-open', isOpen);
-        hamburgerBtn.setAttribute('aria-expanded', isOpen);
-    });
-}
-
-aMenu.forEach(e => {
-    e.addEventListener('click', ()=>{
-        navMenu.classList.remove('open')
-        hamburgerBtn.classList.remove('open')
-
-         document.body.classList.remove('menu-open')
-    })
-})
-
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const navMenu = document.getElementById("navMenu");
+const menuLinks = document.querySelectorAll(".nav-menu a");
 const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const closeModalBtn = document.querySelector(".close-modal");
+const modalCta = document.querySelector(".modal-btn");
 
-const title = document.getElementById("modal-title");
-
-const description = document.getElementById("modal-description");
-
-const closeModal = document.querySelector(".close-modal");
-
-
-// CONTENIDO DE CADA MODAL
+const WHATSAPP_BASE = "https://wa.me/5491139068165?text=";
+const DEFAULT_MESSAGE = "Hola, me interesa hacer una consulta sobre sus servicios.";
 
 const contenido = {
-
     web: {
         titulo: "Desarrollo web",
+        mensaje: "Hola, me interesa consultar por el servicio de desarrollo web.",
         descripcion: `<span class="head-info">Tener una web es darle a tu negocio una presencia profesional, generar confianza y llegar a nuevos clientes.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -57,6 +37,7 @@ Convertí visitas en consultas y ventas.
 
     apps: {
         titulo: "Desarrollo de aplicaciones",
+        mensaje: "Hola, me interesa consultar por el servicio de desarrollo de aplicaciones.",
         descripcion: `<span class="head-info">Transformá tus ideas en aplicaciones que simplifican tareas, conectan personas y potencian tu negocio.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -78,6 +59,7 @@ Ofrecé mejores experiencias a tus clientes.
 
     marketing: {
         titulo: "Marketing digital",
+        mensaje: "Hola, me interesa consultar por el servicio de marketing digital.",
         descripcion: `<span class="head-info">Hacé crecer tu marca, conectá con nuevos clientes y destacate en el mundo digital con estrategias pensadas para tu negocio.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -98,7 +80,8 @@ Convertí tu presencia digital en nuevas oportunidades.
     },
 
     domotica: {
-        titulo: "Domótica",
+        titulo: "Domótica y automatización",
+        mensaje: "Hola, me interesa consultar por el servicio de domótica y automatización.",
         descripcion: `<span class="head-info">Convertí tu hogar o espacio de trabajo en un entorno inteligente, conectando tecnología para simplificar tu día a día.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -119,7 +102,8 @@ Gestioná tus dispositivos desde cualquier lugar.
     },
 
     consultoria: {
-        titulo: "Consultorías personalizadas",
+        titulo: "Consultoría tecnológica",
+        mensaje: "Hola, me interesa consultar por el servicio de consultoría tecnológica.",
         descripcion: `<span class="head-info">Cada negocio tiene desafíos diferentes. Te ayudamos a encontrar las mejores soluciones tecnológicas para crecer, optimizar recursos y alcanzar tus objetivos.</span>
 
 ¿QUÉ BENEFICIOS OBTENÉS?
@@ -138,72 +122,116 @@ Encontrá la tecnología adecuada para tu negocio.
 
 <span class="head-info">Las mejores decisiones comienzan con una buena estrategia.</span>`
     }
-
 };
 
+let lastFocusedElement = null;
 
-// ABRIR MODAL
+function setMenuState(isOpen) {
+    if (!hamburgerBtn || !navMenu) return;
 
-document.querySelectorAll("a.open-modal").forEach(link => {
+    hamburgerBtn.classList.toggle("open", isOpen);
+    navMenu.classList.toggle("open", isOpen);
+    document.body.classList.toggle("menu-open", isOpen);
+    hamburgerBtn.setAttribute("aria-expanded", String(isOpen));
+    hamburgerBtn.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+}
 
-    link.addEventListener("click", (e) => {
+function closeMenu() {
+    setMenuState(false);
+}
 
-        e.preventDefault();
+function openModal(serviceKey, triggerElement) {
+    const service = contenido[serviceKey];
+    if (!service || !modal || !modalTitle || !modalDescription) return;
 
-        const tipo = link.dataset.modal;
+    closeMenu();
+    lastFocusedElement = triggerElement || document.activeElement;
 
-        if (!contenido[tipo]) return;
+    modalTitle.textContent = service.titulo;
+    // El HTML es contenido estático definido en este archivo.
+    modalDescription.innerHTML = service.descripcion;
 
-        title.textContent = contenido[tipo].titulo;
+    modal.dataset.message = service.mensaje;
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
 
-        description.innerHTML = contenido[tipo].descripcion;
+    if (closeModalBtn) closeModalBtn.focus();
+}
 
-        modal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-    });
-
-});
-
-
-// CERRAR MODAL CON LA X
-
-closeModal.addEventListener("click", () => {
+function closeModal() {
+    if (!modal || !modal.classList.contains("active")) return;
 
     modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
 
-    document.body.style.overflow = "";
-
-});
-
-
-// CERRAR AL HACER CLICK AFUERA
-
-modal.addEventListener("click", (e) => {
-
-    if (e.target === modal) {
-
-        modal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
     }
+}
 
+if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", () => {
+        const isOpen = hamburgerBtn.getAttribute("aria-expanded") !== "true";
+        setMenuState(isOpen);
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width: 701px)").matches) closeMenu();
+    });
+}
+
+document.querySelectorAll(".open-modal[data-modal]").forEach(card => {
+    card.addEventListener("click", () => {
+        openModal(card.dataset.modal, card);
+    });
 });
 
+if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", closeModal);
+}
 
-// CERRAR CON ESCAPE
+if (modal) {
+    modal.addEventListener("click", event => {
+        if (event.target === modal) closeModal();
+    });
+}
 
-document.addEventListener("keydown", (e) => {
+if (modalCta) {
+    modalCta.addEventListener("click", () => {
+        const message = modal?.dataset.message || DEFAULT_MESSAGE;
+        const url = WHATSAPP_BASE + encodeURIComponent(message);
+        window.open(url, "_blank", "noopener,noreferrer");
+    });
+}
 
-    if (e.key === "Escape") {
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeModal();
 
-        modal.classList.remove("active");
+    if (event.key === "Tab" && modal?.classList.contains("active")) {
+        const focusable = modal.querySelectorAll(
+            'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable.length) return;
 
-        document.body.style.overflow = "";
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
 
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
     }
-
 });
-
