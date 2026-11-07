@@ -1,267 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Codexa: desarrollo web, aplicaciones, marketing digital, domótica y consultoría tecnológica.">
+    <meta name="theme-color" content="#0c1314">
+    <title>Codexa | Tecnología para hacer crecer tus ideas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/ec74e78deb.js" crossorigin="anonymous"></script>
-    <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./assets/images/codexa_logo.png" alt="">
-        </div>
-        <div class="h-menu">
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <!-- Menú de navegación -->
+    <header class="site-header">
+        <a class="logo" href="#hero" aria-label="Codexa, inicio">
+            <img src="/assets/images/codexa_logo.png" alt="Codexa">
+        </a>
 
-        <menu class="nav-menu" id="navMenu">
-            <li><a class="option" href="#hero">Inicio</a></li>
-            <li><a class="option" href="#services">servicios</a></li>
-            <li><a class="option" href="#about">asi trabajamos</a></li>
-            <li><a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
-                    class="hero__btn"
-                    target="_blank"
-                    rel="noopener noreferrer">Contactanos ahora!</a></li>
-        </menu>
-    </header>
-
-    <main>
-        <div id="hero" class="hero">
-            <video autoplay muted loop id="heroVideo">
-                <source src="/assets/images/hero.mp4" type="video/mp4">
-            </video>
-            
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2 class="hero__title">
-                        Tu idea, <br> en buenas manos
-                    </h2>
-                </div>
-                <div class="hero-btn">
-                    <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
-                    class="hero__btn"
-                    target="_blank"
-                    rel="noopener noreferrer"><span>Hablemos de tu proyecto</span></a>
-                </div>
-            </div>
-        </div>
-
-        <section id="services" class="services">
-            <div class="services-container">
-                <h4 class="section-title">NUESTROS SERVICIOS</h4>
-                <div class="cards">
-                    <a  class="card open-modal" data-modal="web">
-                        <div class="cardImg">
-                            <img src="/assets/images/devIcon.png" alt="Desarrollo Web">
-                        </div>
-                        <div class="cardInfo">
-                            <h2>Desarrollo Web</h2>
-                            <p>Desarrollamos sitios web modernos, funcionales y adaptables a cualquier dispositivo.</p>
-                        </div>
-                    </a>
-                    <a class="card open-modal" data-modal="apps">
-                        <div class="cardImg">
-                            <img src="/assets/images/softwareIcon.png" alt="Desarrollo Web">
-                        </div>
-                        <div class="cardInfo">
-                            <h2>Desarrollo de Apps</h2>
-                            <p>Diseñamos y desarrollamos aplicaciones personalizadas para resolver necesidades específicas de tu negocio.</p>
-                        </div>
-                    </a>
-                    <a class="card open-modal" data-modal="marketing">
-                        <div class="cardImg">
-                            <img src="/assets/images/marketingIcon.png" alt="Desarrollo Web">
-                        </div>
-                        <div class="cardInfo">
-                            <h2>Markeing digital</h2>
-                            <p>Desarrollamos estrategias digitales para mejorar la visibilidad de tu marca, conectar con tu público y generar oportunidades comerciales.</p>
-                        </div>
-                    </a>
-                    <a class="card open-modal" data-modal="domotica">
-                        <div class="cardImg">
-                            <img src="/assets/images/domoticaIcon.png" alt="Desarrollo Web">
-                        </div>
-                        <div class="cardInfo">
-                            <h2>Domotica y automatización</h2>
-                            <p>Desarrollamos soluciones de domótica y automatización para mejorar la comodidad, seguridad y eficiencia de tu hogar o negocio.</p>
-                        </div>
-                    </a>
-                    <a class="card open-modal" data-modal="consultoria">
-                        <div class="cardImg">
-                            <img src="/assets/images/consultoriaIcon.png" alt="Desarrollo Web">
-                        </div>
-                        <div class="cardInfo">
-                            <h2>Consultoría tecnológica</h2>
-                            <p>Ofrecemos asesoramiento especializado para ayudarte a tomar decisiones informadas sobre la implementación de soluciones tecnológicas.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- modal services -->
-
-        <div class="modal" id="modal">
-
-    <div class="modal-content">
-
-        <button class="close-modal" aria-label="Cerrar modal">
-            &times;
+        <button class="hamburger-btn" id="hamburgerBtn" type="button"
+            aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </button>
 
-        <h2 id="modal-title"></h2>
+        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+            <a class="option" href="#hero">Inicio</a>
+            <a class="option" href="#services">Servicios</a>
+            <a class="option" href="#about">Así trabajamos</a>
+            <a class="option" href="#why-us">Por qué elegirnos</a>
+            <a class="nav-cta" href="https://wa.me/5491139068165?text=Hola%2C%20me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                target="_blank" rel="noopener noreferrer">Contactanos</a>
+        </nav>
+    </header>
 
-        <p id="modal-description"></p>
+    <main id="main">
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+                <source src="/assets/images/hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay" aria-hidden="true"></div>
 
-        <button class="modal-btn">Consulta por este servicio</button>
+            <div class="hero-content">
+                <p class="hero-eyebrow">TECNOLOGÍA · DISEÑO · INNOVACIÓN</p>
+                <h1 class="hero__title" id="hero-title">Tu idea,<br>en buenas manos.</h1>
+                <p class="hero-description">Transformamos ideas en soluciones digitales pensadas para impulsar tu negocio.</p>
+                <a class="hero__btn" href="https://wa.me/5491139068165?text=Hola%2C%20me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                    target="_blank" rel="noopener noreferrer">
+                    <span>Hablemos de tu proyecto</span>
+                    <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <a class="hero-scroll" href="#services" aria-label="Ir a nuestros servicios"><span></span> DESCUBRÍ MÁS</a>
+        </section>
 
-    </div>
+        <section id="services" class="services section-shell" aria-labelledby="services-title">
+            <div class="section-heading">
+                <p class="section-kicker">LO QUE HACEMOS</p>
+                <h2 class="section-title" id="services-title">Nuestros servicios</h2>
+                <p class="section-description">Soluciones tecnológicas para acompañar cada etapa de tu proyecto.</p>
+            </div>
 
-</div>
+            <div class="cards">
+                <button class="card open-modal" type="button" data-modal="web" aria-haspopup="dialog">
+                    <span class="cardImg"><img src="/assets/images/devIcon.png" alt="" loading="lazy"></span>
+                    <span class="cardInfo">
+                        <span class="card-title">Desarrollo web</span>
+                        <span class="card-description">Desarrollamos sitios web modernos, funcionales y adaptables a cualquier dispositivo.</span>
+                        <span class="card-link">Conocé más <span aria-hidden="true">↗</span></span>
+                    </span>
+                </button>
 
-        <div class="modal"></div>
+                <button class="card open-modal" type="button" data-modal="apps" aria-haspopup="dialog">
+                    <span class="cardImg"><img src="/assets/images/softwareIcon.png" alt="" loading="lazy"></span>
+                    <span class="cardInfo">
+                        <span class="card-title">Desarrollo de apps</span>
+                        <span class="card-description">Diseñamos aplicaciones personalizadas para resolver necesidades específicas de tu negocio.</span>
+                        <span class="card-link">Conocé más <span aria-hidden="true">↗</span></span>
+                    </span>
+                </button>
 
-        <section id="about" class="about"> 
-            <div class="about-content">
-                <div class="aboutInfo">
-                    <h4 class="section-title">NUESTRA FORMA DE TRABAJO</h4>
-                </div>
-                <div class="aboutCards">
-                    <div class="aboutCard">
-                        <div class="aboutCardInfo">
-                            <h2>1. Idea</h2>
-                            <p>Nos reunimos contigo para entender tu idea y tus objetivos, y así poder ofrecerte la mejor solución tecnológica.</p>
-                        </div>
-                    </div>
-                    <div class="aboutCard">
-                        <div class="aboutCardInfo">
-                            <h2>2. Plan</h2>
-                            <p>Diseñamos un plan de acción detallado que incluye los pasos a seguir, los recursos necesarios y los plazos de entrega.</p>
-                        </div>
-                    </div>
-                    <div class="aboutCard">
-                        <div class="aboutCardInfo">
-                            <h2>3. Desarrollo</h2>
-                            <p>Desarrollamos la solución tecnológica utilizando las últimas tecnologías y metodologías de desarrollo ágil.</p>
-                        </div>
-                    </div>
-                    <div class="aboutCard">
-                        <div class="aboutCardInfo">
-                            <h2>4.  Pruebas</h2>
-                            <p>Realizamos pruebas exhaustivas para garantizar que la solución tecnológica cumpla con los requisitos y estándares de calidad.</p>
-                        </div>
-                    </div>
+                <button class="card open-modal" type="button" data-modal="marketing" aria-haspopup="dialog">
+                    <span class="cardImg"><img src="/assets/images/marketingIcon.png" alt="" loading="lazy"></span>
+                    <span class="cardInfo">
+                        <span class="card-title">Marketing digital</span>
+                        <span class="card-description">Creamos estrategias para mejorar la visibilidad de tu marca y generar oportunidades comerciales.</span>
+                        <span class="card-link">Conocé más <span aria-hidden="true">↗</span></span>
+                    </span>
+                </button>
+
+                <button class="card open-modal" type="button" data-modal="domotica" aria-haspopup="dialog">
+                    <span class="cardImg"><img src="/assets/images/domoticaIcon.png" alt="" loading="lazy"></span>
+                    <span class="cardInfo">
+                        <span class="card-title">Domótica y automatización</span>
+                        <span class="card-description">Integramos tecnología para mejorar la comodidad, seguridad y eficiencia de tu hogar o negocio.</span>
+                        <span class="card-link">Conocé más <span aria-hidden="true">↗</span></span>
+                    </span>
+                </button>
+
+                <button class="card open-modal" type="button" data-modal="consultoria" aria-haspopup="dialog">
+                    <span class="cardImg"><img src="/assets/images/consultoriaIcon.png" alt="" loading="lazy"></span>
+                    <span class="cardInfo">
+                        <span class="card-title">Consultoría tecnológica</span>
+                        <span class="card-description">Te asesoramos para tomar decisiones informadas e implementar las soluciones adecuadas.</span>
+                        <span class="card-link">Conocé más <span aria-hidden="true">↗</span></span>
+                    </span>
+                </button>
             </div>
         </section>
 
-        
-        <section class="why-us" id="why-us">
-
-    <div class="why-us-container">
-
-        <div class="why-us-header">
-            <h4 class="section-title">¿POR QUÉ ELEGIRNOS?</h4>
+        <div class="modal" id="modal" aria-hidden="true">
+            <section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+                <button class="close-modal" type="button" aria-label="Cerrar ventana">&times;</button>
+                <p class="section-kicker">CONOCÉ LA PROPUESTA</p>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <button class="modal-btn" type="button">Consultar por este servicio <span aria-hidden="true">↗</span></button>
+            </section>
         </div>
 
-        <div class="why-us-grid">
-
-            <article class="why-card">
-
-                <h3>Desde 7 días*</h3>
-                <h4>ENTREGAS ÁGILES</h4>
-                <p>
-                    Trabajamos con procesos organizados para avanzar
-                    sin perder tiempo ni calidad.
-                </p>
-            </article>
-
-            <article class="why-card">
-
-                <h3>100%</h3>
-                <h4>A MEDIDA</h4>
-                <p>
-                    Cada proyecto se adapta a tus necesidades,
-                    objetivos y estilo.
-                </p>
-            </article>
-
-            <article class="why-card">
-
-                <h3>24/7</h3>
-                <h4>DISPONIBILIDAD</h4>
-                <p>
-                    Tu presencia digital puede estar disponible
-                    para tus clientes en todo momento.
-                </p>
-            </article>
-
-            <article class="why-card">
-
-                <h3>360°</h3>
-                <h4>VISIÓN INTEGRAL</h4>
-                <p>
-                    Diseño, desarrollo y tecnología trabajando
-                    en conjunto para tu negocio.
-                </p>
-            </article>
-
-            <article class="why-card">
-
-                <h3>1 a 1</h3>
-                <h4>ATENCIÓN DIRECTA</h4>
-                <p>
-                    Estamos en contacto con vos durante
-                    cada etapa del proyecto.
-                </p>
-            </article>
-
-            <article class="why-card">
-
-                <h3>∞</h3>
-                <h4>POSIBILIDADES</h4>
-                <p>
-                    Creamos soluciones que pueden evolucionar
-                    junto con tu negocio.
-                </p>
-            </article>
-
-        </div>
-
-        <span class="why-us-note">
-            *Los plazos de entrega dependen del alcance y la complejidad del proyecto.
-        </span>
-
-    </div>
-
-</section>
-        
-
-        <footer>
-            <seccion class="actionBtn">
-            <h2>Empeza ahora mismo</h2>
-            <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
-                    class="hero__btn"
-                    target="_blank"
-                    rel="noopener noreferrer"><span>Hablemos de tu proyecto</span></a>
-        </seccion>
-            <div class="flogo">
-                <img src="./assets/images/codexa_logo.png" alt="">
+        <section id="about" class="about section-shell" aria-labelledby="about-title">
+            <div class="section-heading">
+                <p class="section-kicker">DE LA IDEA AL RESULTADO</p>
+                <h2 class="section-title" id="about-title">Nuestra forma de trabajo</h2>
+                <p class="section-description">Un proceso claro, colaborativo y pensado para que sepas qué pasa en cada etapa.</p>
             </div>
-            <div class="socialMedia">
-                <a href="https://www.instagram.com/codexa_techco/"><img src="./assets/images/instaIcon.png" alt=""></a>
-                <a href="https://wa.me/5491139068165?text=Hola%2C%20Me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."><img src="./assets/images/wspIcon.png" alt=""></a>
+
+            <div class="aboutCards">
+                <article class="aboutCard">
+                    <span class="step-number">01</span>
+                    <div class="aboutCardInfo">
+                        <h3>Idea</h3>
+                        <p>Conversamos para entender tu idea, tus objetivos y qué necesitás resolver.</p>
+                    </div>
+                </article>
+                <article class="aboutCard">
+                    <span class="step-number">02</span>
+                    <div class="aboutCardInfo">
+                        <h3>Plan</h3>
+                        <p>Definimos la solución, las etapas de trabajo, los recursos y los plazos estimados.</p>
+                    </div>
+                </article>
+                <article class="aboutCard">
+                    <span class="step-number">03</span>
+                    <div class="aboutCardInfo">
+                        <h3>Desarrollo</h3>
+                        <p>Construimos tu proyecto con seguimiento y comunicación durante el proceso.</p>
+                    </div>
+                </article>
+                <article class="aboutCard">
+                    <span class="step-number">04</span>
+                    <div class="aboutCardInfo">
+                        <h3>Pruebas y entrega</h3>
+                        <p>Revisamos el resultado, ajustamos detalles y comprobamos que todo funcione correctamente.</p>
+                    </div>
+                </article>
             </div>
-        </footer>
+        </section>
+
+        <section class="why-us section-shell" id="why-us" aria-labelledby="why-title">
+            <div class="section-heading">
+                <p class="section-kicker">EL VALOR DE TRABAJAR JUNTOS</p>
+                <h2 class="section-title" id="why-title">¿Por qué elegirnos?</h2>
+                <p class="section-description">Un equipo cercano, soluciones a medida y tecnología con objetivos concretos.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <article class="why-card">
+                    <h3>Desde 7 días*</h3>
+                    <h4>ENTREGAS ÁGILES</h4>
+                    <p>Organizamos cada etapa para avanzar sin perder de vista la calidad.</p>
+                </article>
+                <article class="why-card">
+                    <h3>100%</h3>
+                    <h4>A MEDIDA</h4>
+                    <p>Cada proyecto se adapta a tus necesidades, objetivos y estilo.</p>
+                </article>
+                <article class="why-card">
+                    <h3>24/7</h3>
+                    <h4>SIEMPRE ONLINE</h4>
+                    <p>Tu presencia digital puede estar disponible para tus clientes en todo momento.</p>
+                </article>
+                <article class="why-card">
+                    <h3>360°</h3>
+                    <h4>VISIÓN INTEGRAL</h4>
+                    <p>Diseño, desarrollo y tecnología trabajando en conjunto.</p>
+                </article>
+                <article class="why-card">
+                    <h3>1 a 1</h3>
+                    <h4>ATENCIÓN DIRECTA</h4>
+                    <p>Estamos en contacto con vos durante cada etapa del proyecto.</p>
+                </article>
+                <article class="why-card">
+                    <h3>∞</h3>
+                    <h4>POSIBILIDADES</h4>
+                    <p>Creamos soluciones que pueden evolucionar junto con tu negocio.</p>
+                </article>
+            </div>
+            <p class="why-us-note">*Los plazos de entrega dependen del alcance y la complejidad del proyecto.</p>
+        </section>
     </main>
 
-    <script src="/js/script.js"></script>
+    <footer class="site-footer">
+        <div class="footer-cta">
+            <p class="section-kicker">¿TENÉS UNA IDEA?</p>
+            <h2>Empezá a darle forma a tu proyecto.</h2>
+            <a class="hero__btn" href="https://wa.me/5491139068165?text=Hola%2C%20me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                target="_blank" rel="noopener noreferrer">
+                <span>Hablemos de tu proyecto</span><span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <a class="flogo" href="#hero" aria-label="Codexa, volver al inicio">
+                <img src="/assets/images/codexa_logo.png" alt="Codexa">
+            </a>
+            <p>Ideas que conectan. Tecnología que transforma.</p>
+            <div class="socialMedia">
+                <a href="https://www.instagram.com/codexa_techco/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Codexa">
+                    <img src="/assets/images/instaIcon.png" alt="">
+                </a>
+                <a href="https://wa.me/5491139068165?text=Hola%2C%20me%20interesa%20hacer%20una%20consulta%20sobre%20sus%20servicios."
+                    target="_blank" rel="noopener noreferrer" aria-label="Contactar a Codexa por WhatsApp">
+                    <img src="/assets/images/wspIcon.png" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js" defer></script>
 </body>
 </html>
