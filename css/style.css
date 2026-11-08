@@ -24,13 +24,15 @@
 }
 
 html {
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-height) + 24px);
 }
 
 body {
     min-width: 320px;
-    overflow-x: hidden;
+    min-height: 100%;
+    overflow-x: clip;
     background: var(--color-bg);
     color: var(--color-text);
     font-family: "Fira Sans", sans-serif;
@@ -744,7 +746,9 @@ video {
         gap: 0;
         padding: 14px var(--page-gutter) 30px;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
+        touch-action: pan-y;
         background: linear-gradient(145deg, rgba(17, 51, 83, 0.98), rgba(11, 19, 43, 0.99));
         visibility: hidden;
         opacity: 0;
