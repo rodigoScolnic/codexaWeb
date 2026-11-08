@@ -266,8 +266,7 @@ document.addEventListener("keydown", event => {
     const dots = [...document.querySelectorAll(".carousel-dot")];
     const previous = document.getElementById("projectPrev");
     const next = document.getElementById("projectNext");
-    const counter = document.getElementById("projectCounter");
-    if (!track || slides.length === 0 || !previous || !next || !counter) return;
+    if (!track || slides.length === 0 || !previous || !next) return;
 
     let current = 0;
     const showProject = index => {
@@ -287,7 +286,6 @@ document.addEventListener("keydown", event => {
             dot.classList.toggle("active", active);
             dot.setAttribute("aria-current", String(active));
         });
-        counter.innerHTML = `0${current + 1} <i>/</i> 0${slides.length}`;
         previous.disabled = current === 0;
         next.disabled = current === slides.length - 1;
     };
